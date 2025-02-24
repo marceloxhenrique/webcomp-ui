@@ -11,5 +11,8 @@
     "UI"
   ],
   "author": "marceloxhenrique",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
 }
