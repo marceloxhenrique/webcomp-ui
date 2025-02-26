@@ -6,12 +6,6 @@ export default class Ubutton extends HTMLElement {
       border: "solid 1px transparent",
       color: "#FFFFFF",
     },
-    danger: {
-      background: "#DC2626",
-      background_hover: "#E44949",
-      border: "solid 1px transparent",
-      color: "#FFFFFF",
-    },
     secondary: {
       background: "#DFDFDF",
       background_hover: "none",
@@ -20,19 +14,24 @@ export default class Ubutton extends HTMLElement {
     },
     outline: {
       background: "#ffffff",
-      background_hover: "#D3D3D3",
-      border: "solid 1px #D3D3D3 ",
+      background_hover: "#DFDFDF",
+      border: "solid 1px #e4e4e7 ",
       color: "#242526",
+    },
+    danger: {
+      background: "#DC2626",
+      background_hover: "#E44949",
+      border: "solid 1px transparent",
+      color: "#FFFFFF",
     },
   };
   constructor() {
     super();
-    const shadow: ShadowRoot = this.attachShadow({ mode: "closed" });
+    const shadow: ShadowRoot = this.attachShadow({ mode: "open" });
     const button: HTMLElement = document.createElement("button");
     button.setAttribute("class", "button-custom");
     button.innerHTML = `<slot></slot>`;
-    const variant: ButtonVariant =
-      (this.getAttribute("variant") as ButtonVariant) ?? ButtonVariant.default;
+    const variant = (this.getAttribute("variant") as ButtonVariant) ?? ButtonVariant.DEFAULT;
     const style: HTMLStyleElement = document.createElement("style");
     style.textContent = `
       .button-custom {
@@ -64,10 +63,10 @@ export default class Ubutton extends HTMLElement {
 }
 
 enum ButtonVariant {
-  default = "default",
-  danger = "danger",
-  secondary = "secondary",
-  outline = "outline",
+  DEFAULT = "default",
+  SECONDARY = "secondary",
+  OUTLINE = "outline",
+  DANGER = "danger",
 }
 
 type ButtonTheme = {
@@ -79,7 +78,7 @@ type ButtonTheme = {
 
 type ButtonStyles = {
   default: ButtonTheme;
-  danger: ButtonTheme;
   secondary: ButtonTheme;
   outline: ButtonTheme;
+  danger: ButtonTheme;
 };
