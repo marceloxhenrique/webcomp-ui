@@ -2,7 +2,7 @@
   "name": "universal_ui",
   "version": "1.0.0",
   "description": "Web Components library UI.",
-  "main": "lib.js",
+  "main": "src/lib.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsc --watch"
