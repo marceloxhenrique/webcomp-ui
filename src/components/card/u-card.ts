@@ -22,7 +22,7 @@ export default class Ucard extends HTMLElement {
           width: ${this.width};
           padding: .8rem;
           border-radius: .8rem;
-          border: 1px solid lightgray;
+          border: .1rem solid lightgray;
           font-family: Arial, Helvetica, sans-serif;
           text-align: left;
           gap: .8rem;
