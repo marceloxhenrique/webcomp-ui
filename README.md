@@ -1,4 +1,4 @@
-![Web Comp UI](https://github.com/user-attachments/assets/2316b358-dc6c-4b33-b809-e8d54fbd4914)
+![Web Comp UI](https://github.com/user-attachments/assets/85bc5264-23ef-43ba-9414-5cbfbc002c82)
 
 <div align="center">
 
@@ -26,13 +26,13 @@
 <p>Add the CDN script tag to the `< head >` of your HTML file</p>
 
 ```bash
-   <script type="module">import "https://cdn.jsdelivr.net/npm/web-comp-ui@latest/dist/esm/lib.js"</script>
+    <script type="module" src="https://unpkg.com/webcomp-ui@latest"></script>
 ```
 
 ### Install via npm
 
 ```bash
-  npm install web-comp-ui
+  npm install webcomp-ui
 ```
 
 ## Quickstart
@@ -44,10 +44,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web Comp UI</title>
-    <script type="module">
-      import "https://cdn.jsdelivr.net/npm/web-comp-ui@latest/dist/esm/lib.js";
-    </script>
+    <title>webcomp/ui</title>
+    <script type="module" src="https://unpkg.com/webcomp-ui@latest"></script>
   </head>
   <body>
     <main>

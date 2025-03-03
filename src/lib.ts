@@ -1,12 +1,12 @@
-import Ubutton from "./components/button/u-button.js";
 import Ucard from "./components/card/u-card.js";
+import Ubutton from "./components/button/u-button.js";
 
-customElements.define("u-button", Ubutton);
 customElements.define("u-card", Ucard);
+customElements.define("u-button", Ubutton);
 
-export { Ubutton, Ucard };
+export { Ucard, Ubutton };
 
 export default {
-  Ubutton,
   Ucard,
+  Ubutton,
 };

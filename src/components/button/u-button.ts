@@ -28,13 +28,30 @@ export default class Ubutton extends HTMLElement {
       color: "#FFFFFF",
     },
   };
+
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
     this.template = document.createElement("template");
     this.variant = (this.getAttribute("variant") as ButtonVariant) ?? ButtonVariant.DEFAULT;
-    this.width = this.getAttribute("width") ?? "";
+    this.width = this.getAttribute("width") ?? "auto";
+    this.render();
+  }
 
+  static get observedAttributes() {
+    return ["variant", "width"];
+  }
+
+  attributeChangedCallback(name: string, oldValue: string, newValue: string) {
+    if (oldValue !== newValue) {
+      if (name === "variant") this.variant = (newValue as ButtonVariant) || ButtonVariant.DEFAULT;
+      if (name === "width") this.width = newValue || "auto";
+      this.render();
+    }
+  }
+
+  render() {
+    this.shadowRoot!.innerHTML = ``;
     this.template.innerHTML = `
       <style>
         .button-custom {
@@ -47,7 +64,6 @@ export default class Ubutton extends HTMLElement {
           font-weight: 500;
           line-height: 1.25rem;
           cursor: pointer;
-          border: ${this.styles[this.variant]?.border || this.styles.default.border};
           border: ${this.styles[this.variant]?.border || this.styles.default.border};
           color: ${this.styles[this.variant]?.color || this.styles.default.color};
           background-color: ${
