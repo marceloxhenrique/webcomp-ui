@@ -78,7 +78,7 @@ export default class Ucard extends HTMLElement {
       
     </style>
     <div class="card">
-      <img class="card-img-src" src="${this.cardImageSource}" alt="Card Image" />
+      <img class="card-img-src" src="${this.cardImageSource}" alt="Card Image">
       <h1 class="card-title">${this.cardTitle}</h1>
       <p class="card-content">${this.cardContent}</p>
       <slot></slot>
