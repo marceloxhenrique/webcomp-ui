@@ -26,13 +26,13 @@
 <p>Add the CDN script tag to the `< head >` of your HTML file</p>
 
 ```bash
-    <script type="module" src="https://unpkg.com/webcomp-ui@latest"></script>
+<script type="module" src="https://unpkg.com/webcomp-ui@latest"></script>
 ```
 
 ### Install via npm
 
 ```bash
-  npm install webcomp-ui
+npm install webcomp-ui
 ```
 
 ## Quickstart
