@@ -1,4 +1,4 @@
-export default class Ubutton extends HTMLElement {
+export default class Button extends HTMLElement {
   template: HTMLTemplateElement;
   variant: ButtonVariant;
   width: string;

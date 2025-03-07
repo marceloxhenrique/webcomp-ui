@@ -1,4 +1,4 @@
-export default class Ucard extends HTMLElement {
+export default class Card extends HTMLElement {
   template: HTMLTemplateElement;
   cardTitle: string;
   cardTitleColor: string;

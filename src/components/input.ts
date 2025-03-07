@@ -1,4 +1,4 @@
-export default class Uinput extends HTMLElement {
+export default class Input extends HTMLElement {
   template: HTMLTemplateElement;
   inputLabel: string;
   inputPlaceholder: string;
