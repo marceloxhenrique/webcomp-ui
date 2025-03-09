@@ -1,4 +1,4 @@
-export default class Ucard extends HTMLElement {
+export default class Card extends HTMLElement {
   template: HTMLTemplateElement;
   cardTitle: string;
   cardTitleColor: string;
@@ -7,7 +7,7 @@ export default class Ucard extends HTMLElement {
   cardImageSource: string;
   constructor() {
     super();
-    this.attachShadow({ mode: "open" });
+    this.attachShadow({mode: "open"});
     this.template = document.createElement("template");
     this.cardTitle = this.getAttribute("card-title") || "My card title";
     this.cardContentColor = this.getAttribute("card-content-color") || "#303131";
@@ -84,7 +84,7 @@ export default class Ucard extends HTMLElement {
       <slot></slot>
     </div>
     `;
-    this.template.setAttribute("part", "u-card");
+    this.template.setAttribute("part", "w-card");
     this.shadowRoot?.appendChild(this.template.content.cloneNode(true));
   }
 }

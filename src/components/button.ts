@@ -1,4 +1,4 @@
-export default class Ubutton extends HTMLElement {
+export default class Button extends HTMLElement {
   template: HTMLTemplateElement;
   variant: ButtonVariant;
   width: string;
@@ -31,7 +31,7 @@ export default class Ubutton extends HTMLElement {
 
   constructor() {
     super();
-    this.attachShadow({ mode: "open" });
+    this.attachShadow({mode: "open"});
     this.template = document.createElement("template");
     this.variant = (this.getAttribute("variant") as ButtonVariant) ?? ButtonVariant.DEFAULT;
     this.width = this.getAttribute("width") ?? "auto";
@@ -66,21 +66,17 @@ export default class Ubutton extends HTMLElement {
           cursor: pointer;
           border: ${this.styles[this.variant]?.border || this.styles.default.border};
           color: ${this.styles[this.variant]?.color || this.styles.default.color};
-          background-color: ${
-            this.styles[this.variant]?.background || this.styles.default.background
-          }; 
+          background-color: ${this.styles[this.variant]?.background || this.styles.default.background}; 
         }
         .button-custom:hover {
-          background-color: ${
-            this.styles[this.variant]?.background_hover || this.styles.default.background_hover
-          };
+          background-color: ${this.styles[this.variant]?.background_hover || this.styles.default.background_hover};
         }
       </style>
-      <button class="button-custom" part="u-button">
+      <button class="button-custom" part="w-button">
         <slot></slot>
       </button>
     `;
-    this.template.setAttribute("part", "u-button");
+    this.template.setAttribute("part", "w-button");
     this.shadowRoot?.appendChild(this.template.content.cloneNode(true));
   }
 }

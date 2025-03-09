@@ -1,15 +1,17 @@
-import Ucard from "./components/card/u-card.js";
-import Ubutton from "./components/button/u-button.js";
-import Uinput from "./components/input/u-input.js";
+import Card from "./components/card.js";
+import Button from "./components/button.js";
+import Input from "./components/input.js";
+import Accordion from "./components/accordion.js";
 
-customElements.define("u-card", Ucard);
-customElements.define("u-button", Ubutton);
-customElements.define("u-input", Uinput);
-
-export { Ucard, Ubutton, Uinput };
+customElements.define("w-card", Card);
+customElements.define("w-button", Button);
+customElements.define("w-input", Input);
+customElements.define("w-accordion", Accordion);
+export {Card, Button, Input, Accordion};
 
 export default {
-  Ucard,
-  Ubutton,
-  Uinput,
+  Card,
+  Button,
+  Input,
+  Accordion,
 };
