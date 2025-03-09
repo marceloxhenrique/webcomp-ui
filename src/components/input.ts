@@ -5,7 +5,7 @@ export default class Input extends HTMLElement {
   inputWidth: string;
   constructor() {
     super();
-    this.attachShadow({ mode: "open" });
+    this.attachShadow({mode: "open"});
     this.template = document.createElement("template");
     this.inputLabel = this.getAttribute("input-label") || "Input";
     this.inputPlaceholder = this.getAttribute("input-placeholder") || "Type here";
@@ -72,7 +72,7 @@ export default class Input extends HTMLElement {
     inputElement?.addEventListener("keyup", (event) => {
       this.dispatchEvent(
         new CustomEvent("inputChange", {
-          detail: { value: (event.target as HTMLInputElement).value },
+          detail: {value: (event.target as HTMLInputElement).value},
           bubbles: true,
           composed: true,
         })

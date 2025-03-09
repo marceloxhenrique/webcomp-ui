@@ -3,11 +3,11 @@ import Button from "./components/button.js";
 import Input from "./components/input.js";
 import Accordion from "./components/accordion.js";
 
-customElements.define("u-card", Card);
-customElements.define("u-button", Button);
-customElements.define("u-input", Input);
-customElements.define("u-accordion", Accordion);
-export { Card, Button, Input, Accordion };
+customElements.define("w-card", Card);
+customElements.define("w-button", Button);
+customElements.define("w-input", Input);
+customElements.define("w-accordion", Accordion);
+export {Card, Button, Input, Accordion};
 
 export default {
   Card,
