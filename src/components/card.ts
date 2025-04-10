@@ -43,47 +43,60 @@ export default class Card extends HTMLElement {
     this.shadowRoot!.innerHTML = ``;
     this.template.innerHTML = `
     <style>
-      * {
+      *{
         margin: 0;
         padding: 0;
       }
-      .card {
-        display: flex;
-        flex-direction: column;
-        max-width: 25rem;
-        padding: .8rem;
-        border: .1rem solid #cfcfd2;
-        border-radius: .5rem;
-        font-family: Arial, Helvertica, sans-serif;
+      :host {
+        display: block;
+        font-family: "Segoe UI", Roboto, sans-serif;
+      }
 
+      .card {
+        background-color: #ffffff;
+        border-radius: 1rem;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        overflow: hidden;
+        max-width: 25rem;
       }
-      .card-img-src{
+
+      .card-img-src {
         width: 100%;
-        max-height: 18rem;
-        border-radius: .6rem;  
-        margin-bottom: .2rem;
-        object-fit: contain;
+        height: 14rem;
+        object-fit: cover;
       }
+
+      .card-content-wrapper {
+        padding: 1.5rem;
+      }
+
       .card-title {
-        text-align: left;
-        font-family: Arial, Helvetica, sans-serif;
-        padding: .6rem 0 .4rem 0;
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
         color: ${this.cardTitleColor};
       }
-      .card-content{
-        padding-bottom: 1.4rem;
+
+      .card-content {
+        font-size: 0.95rem;
+        line-height: 1.6;
         color: ${this.cardContentColor};
-        
       }
-      
+
+      slot {
+        display: block;
+        margin-top: 1rem;
+      }
     </style>
     <div class="card">
-      <img class="card-img-src" src="${this.cardImageSource}" alt="Card Image">
-      <h1 class="card-title">${this.cardTitle}</h1>
-      <p class="card-content">${this.cardContent}</p>
-      <slot></slot>
+      <img class="card-img-src" src="${this.cardImageSource}" alt="Card Image" />
+      <div class="card-content-wrapper">
+        <h1 class="card-title">${this.cardTitle}</h1>
+        <p class="card-content">${this.cardContent}</p>
+        <slot></slot>
+      </div>
     </div>
-    `;
+  `;
     this.template.setAttribute("part", "w-card");
     this.shadowRoot?.appendChild(this.template.content.cloneNode(true));
   }
