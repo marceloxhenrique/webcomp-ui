@@ -10,6 +10,8 @@ import Accordion from "./components/accordion.js";
 customElements.define("w-accordion", Accordion);
 import Textarea from "./components/text-area.js";
 customElements.define("w-textarea", Textarea);
+import Tooltip from "./components/tooltip.js";
+customElements.define("w-tooltip", Tooltip);
 
 export {Card, Button, Input, Accordion, Spinner};
 
@@ -20,4 +22,5 @@ export default {
   Accordion,
   Spinner,
   Textarea,
+  Tooltip,
 };
