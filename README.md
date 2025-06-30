@@ -1,12 +1,17 @@
-![Web Comp UI](https://github.com/user-attachments/assets/85bc5264-23ef-43ba-9414-5cbfbc002c82)
+
+<div align="center" margin-bottom="20">
+	<img width="720" alt="Nexus" src="https://github.com/user-attachments/assets/480bd037-db1f-4e5c-be00-143e99a9790e" />
+</div>
+
+<br/>
 
 <div align="center">
 
-![HTML5](https://img.shields.io/badge/HTML5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=for-the-badge&logo=css3)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/-TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![WEBCOMPONENTS](https://img.shields.io/badge/webcomponents-%23E34F26?style=for-the-badge&logo=components&logoColor=000)
+![HTML5](https://img.shields.io/badge/HTML5-%23E34F26.svg?&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/-CSS3-1572B6?&logo=css3)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?&logo=javascript&logoColor=black)
+![TypeScript](https://img.shields.io/badge/-TypeScript-007ACC?&logo=typescript&logoColor=white)
+![WEBCOMPONENTS](https://img.shields.io/badge/webcomponents-%23E34F26?&logo=components&logoColor=000)
 
 </div>
 

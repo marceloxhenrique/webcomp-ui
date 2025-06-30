@@ -10,7 +10,8 @@
   "exports": {
     "import": "./dist/esm/lib.js",
     "require": "./dist/cjs/lib.js",
-    "types": "./dist/types/lib.d.ts"
+    "types": "./dist/types/lib.d.ts",
+    "default": "./dist/esm/lib.js"
   },
   "repository": {
     "url": "https://github.com/marceloxhenrique/webcomp-ui"
@@ -24,10 +25,11 @@
     "build:esm": "tsc --module ES6 --outDir dist/esm",
     "build:cjs": "tsc --module CommonJS --outDir dist/cjs",
     "build": "npm run build:esm && npm run build:cjs",
-    "dev": "tsc --watch"
+    "dev": "tsc --watch",
+    "cli": "tsx --watch src/index.ts"
   },
   "bin": {
-    "webcomp-ui": "main.js"
+    "webcomp-ui": "/src/index.js"
   },
   "keywords": [
     "Web Components",
