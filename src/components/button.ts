@@ -33,8 +33,8 @@ export default class Button extends HTMLElement {
     super();
     this.attachShadow({mode: "open"});
     this.template = document.createElement("template");
-    this.variant = (this.getAttribute("variant") as ButtonVariant) ?? ButtonVariant.DEFAULT;
-    this.width = this.getAttribute("width") ?? "auto";
+    this.variant = (this.getAttribute("variant") as ButtonVariant) || ButtonVariant.DEFAULT;
+    this.width = this.getAttribute("width") || "auto";
     this.render();
   }
 
@@ -53,25 +53,25 @@ export default class Button extends HTMLElement {
   render() {
     this.shadowRoot!.innerHTML = ``;
     this.template.innerHTML = `
-      <style>
-        .button-custom {
-          width: ${this.width};
-          justify-content: center;
-          align-items: center;
-          padding: .6rem 1.4rem;
-          border-radius: .5rem;
-          font-size: .875rem;
-          font-weight: 500;
-          line-height: 1.25rem;
-          cursor: pointer;
-          border: ${this.styles[this.variant]?.border || this.styles.default.border};
-          color: ${this.styles[this.variant]?.color || this.styles.default.color};
-          background-color: ${this.styles[this.variant]?.background || this.styles.default.background}; 
-        }
-        .button-custom:hover {
-          background-color: ${this.styles[this.variant]?.background_hover || this.styles.default.background_hover};
-        }
-      </style>
+    <style>
+    .button-custom {
+      width: ${this.width};
+      justify-content: center;
+      align-items: center;
+      padding: .6rem 1.4rem;
+      border-radius: .5rem;
+      font-size: .875rem;
+      font-weight: 500;
+      line-height: 1.25rem;
+      cursor: pointer;
+      border: ${this.styles[this.variant]?.border || this.styles.default.border};
+      color: ${this.styles[this.variant]?.color || this.styles.default.color};
+      background-color: ${this.styles[this.variant]?.background || this.styles.default.background}; 
+      }
+      .button-custom:hover {
+        background-color: ${this.styles[this.variant]?.background_hover || this.styles.default.background_hover};
+    }
+    </style>
       <button class="button-custom" part="w-button">
         <slot></slot>
       </button>
@@ -95,9 +95,4 @@ type ButtonTheme = {
   color: string;
 };
 
-type ButtonStyles = {
-  default: ButtonTheme;
-  secondary: ButtonTheme;
-  outline: ButtonTheme;
-  danger: ButtonTheme;
-};
+type ButtonStyles = Record<ButtonVariant, ButtonTheme>;
