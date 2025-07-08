@@ -29,7 +29,7 @@
     "cli": "tsx --watch src/index.ts"
   },
   "bin": {
-    "webcomp-ui": "/src/index.js"
+    "webcomp-ui": "/dist/index.js"
   },
   "keywords": [
     "Web Components",
