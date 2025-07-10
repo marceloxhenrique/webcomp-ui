@@ -63,9 +63,9 @@ export default class Tooltip extends HTMLElement {
         <slot name="tooltip">Tooltip</slot>
       </div>
     `;
-
+    this.template.setAttribute("part", "w-tooltip");
     this.shadowRoot?.appendChild(this.template.content.cloneNode(true));
   }
 }
-
+customElements.define("w-tooltip", Tooltip);
 type TooltipPosition = "top" | "bottom" | "left" | "right";

@@ -66,6 +66,7 @@ export default class Input extends HTMLElement {
     <label for="input" class="label" >${this.inputLabel}</label>
     <input id="input" type="text" placeholder="${this.inputPlaceholder}" class="input" />
     `;
+    this.template.setAttribute("part", "w-input");
     this.shadowRoot?.appendChild(this.template.content.cloneNode(true));
 
     const inputElement = this.shadowRoot?.querySelector("#input");
@@ -80,3 +81,4 @@ export default class Input extends HTMLElement {
     });
   }
 }
+customElements.define("w-input", Input);

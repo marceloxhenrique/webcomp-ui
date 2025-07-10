@@ -56,3 +56,4 @@ export default class Spinner extends HTMLElement {
     this.shadowRoot?.appendChild(this.template.content.cloneNode(true));
   }
 }
+customElements.define("w-spinner", Spinner);
