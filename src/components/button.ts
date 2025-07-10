@@ -80,6 +80,7 @@ export default class Button extends HTMLElement {
     this.shadowRoot?.appendChild(this.template.content.cloneNode(true));
   }
 }
+customElements.define("w-button", Button);
 
 enum ButtonVariant {
   DEFAULT = "default",

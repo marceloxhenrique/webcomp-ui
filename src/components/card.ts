@@ -55,9 +55,9 @@ export default class Card extends HTMLElement {
       .card {
         background-color: #ffffff;
         border-radius: 1rem;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.1);
         overflow: hidden;
-        max-width: 25rem;
+        max-width: 24rem;
       }
 
       .card-img-src {
@@ -101,3 +101,4 @@ export default class Card extends HTMLElement {
     this.shadowRoot?.appendChild(this.template.content.cloneNode(true));
   }
 }
+customElements.define("w-card", Card);

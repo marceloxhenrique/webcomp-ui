@@ -3,7 +3,7 @@ export default class Accordion extends HTMLElement {
 
   constructor() {
     super();
-    this.attachShadow({ mode: "open" });
+    this.attachShadow({mode: "open"});
     this.template = document.createElement("template");
     this.render();
   }
@@ -80,9 +80,7 @@ export default class Accordion extends HTMLElement {
     const slot = this.shadowRoot?.querySelector("slot");
     if (!slot) return;
 
-    const nodes = slot
-      .assignedNodes()
-      .filter((node) => node.nodeType === Node.ELEMENT_NODE) as HTMLElement[];
+    const nodes = slot.assignedNodes().filter((node) => node.nodeType === Node.ELEMENT_NODE) as HTMLElement[];
 
     nodes.forEach((node) => {
       const header = document.createElement("div");
@@ -108,3 +106,4 @@ export default class Accordion extends HTMLElement {
     });
   }
 }
+customElements.define("w-accordion", Accordion);

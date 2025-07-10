@@ -1,12 +1,13 @@
 {
   "name": "webcomp-ui",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Web Components library UI.",
   "main": "dist/cjs/lib.js",
   "module": "dist/esm/lib.js",
   "types": "dist/types/lib.d.ts",
   "type": "module",
   "browser": "dist/esm/lib.js",
+  "unpkg": "dist/esm/lib.js",
   "exports": {
     "import": "./dist/esm/lib.js",
     "require": "./dist/cjs/lib.js",

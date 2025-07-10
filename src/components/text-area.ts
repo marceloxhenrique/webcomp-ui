@@ -69,6 +69,7 @@ export default class Textarea extends HTMLElement {
     <label for="textarea" class="label">${this.inputLabel}</label>
     <textarea id="textarea" placeholder="${this.inputPlaceholder}" rows="${this.rows}" class="textarea"></textarea>
     `;
+    this.template.setAttribute("part", "w-textarea");
     this.shadowRoot?.appendChild(this.template.content.cloneNode(true));
 
     const textareaElement = this.shadowRoot?.querySelector("#textarea");
@@ -83,3 +84,4 @@ export default class Textarea extends HTMLElement {
     });
   }
 }
+customElements.define("w-textarea", Textarea);
