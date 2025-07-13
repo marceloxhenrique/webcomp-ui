@@ -1,3 +1,21 @@
+const ButtonVariant = {
+  default: "default",
+  secondary: "secondary",
+  outline: "outline",
+  danger: "danger",
+} as const;
+
+type ButtonVariant = keyof typeof ButtonVariant;
+
+type ButtonTheme = {
+  background: string;
+  background_hover: string;
+  border: string;
+  color: string;
+};
+
+type ButtonStyles = Record<ButtonVariant, ButtonTheme>;
+
 export default class Button extends HTMLElement {
   template: HTMLTemplateElement;
   variant: ButtonVariant;
@@ -31,9 +49,9 @@ export default class Button extends HTMLElement {
 
   constructor() {
     super();
-    this.attachShadow({mode: "open"});
+    this.attachShadow({ mode: "open" });
     this.template = document.createElement("template");
-    this.variant = (this.getAttribute("variant") as ButtonVariant) || ButtonVariant.DEFAULT;
+    this.variant = (this.getAttribute("variant") as ButtonVariant) || ButtonVariant.default;
     this.width = this.getAttribute("width") || "auto";
     this.render();
   }
@@ -44,7 +62,7 @@ export default class Button extends HTMLElement {
 
   attributeChangedCallback(name: string, oldValue: string, newValue: string) {
     if (oldValue !== newValue) {
-      if (name === "variant") this.variant = (newValue as ButtonVariant) || ButtonVariant.DEFAULT;
+      if (name === "variant") this.variant = (newValue as ButtonVariant) || ButtonVariant.default;
       if (name === "width") this.width = newValue || "auto";
       this.render();
     }
@@ -69,7 +87,9 @@ export default class Button extends HTMLElement {
       background-color: ${this.styles[this.variant]?.background || this.styles.default.background}; 
       }
       .button-custom:hover {
-        background-color: ${this.styles[this.variant]?.background_hover || this.styles.default.background_hover};
+        background-color: ${
+          this.styles[this.variant]?.background_hover || this.styles.default.background_hover
+        };
     }
     </style>
       <button class="button-custom" part="w-button">
@@ -81,19 +101,3 @@ export default class Button extends HTMLElement {
   }
 }
 customElements.define("w-button", Button);
-
-enum ButtonVariant {
-  DEFAULT = "default",
-  SECONDARY = "secondary",
-  OUTLINE = "outline",
-  DANGER = "danger",
-}
-
-type ButtonTheme = {
-  background: string;
-  background_hover: string;
-  border: string;
-  color: string;
-};
-
-type ButtonStyles = Record<ButtonVariant, ButtonTheme>;

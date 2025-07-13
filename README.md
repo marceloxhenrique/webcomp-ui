@@ -1,6 +1,5 @@
-
 <div align="center" margin-bottom="20">
-	<img width="720" alt="Nexus" src="https://github.com/user-attachments/assets/480bd037-db1f-4e5c-be00-143e99a9790e" />
+	<img width="720" alt="webcomp logo" src="https://github.com/user-attachments/assets/480bd037-db1f-4e5c-be00-143e99a9790e" />
 </div>
 
 <br/>
@@ -54,7 +53,7 @@ npm install webcomp-ui
   </head>
   <body>
     <main>
-      <u-button>Submit</u-button>
+      <w-button>Submit</-button>
     </main>
   </body>
 </html>
