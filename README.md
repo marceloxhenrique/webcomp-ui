@@ -25,7 +25,7 @@
 
 ## Install
 
-### Install via CDN
+### Install using CDN
 
 <p>Add the CDN script tag to the `< head >` of your HTML file</p>
 
@@ -33,7 +33,7 @@
 <script type="module" src="https://unpkg.com/webcomp-ui@latest"></script>
 ```
 
-### Install via npm
+### Install using npm
 
 ```bash
 npm install webcomp-ui
